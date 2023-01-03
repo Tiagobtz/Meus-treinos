@@ -1,19 +1,20 @@
-function carregar() {
-    let num = document.getElementById('txtn')
-    let tab = document.getElementById('seltab')
+function tabuada() {
+    let numero = document.getElementById('numero')
+    let tabuada = document.getElementById('tabuada')
 
-    if (num.value.length == 0){
-        window.alert('Digite um número!!')
-    }else{
-        let n = Number(num.value)
+    if (numero.value.length == 0) {
+        window.alert('[ERRO] Digite um número para prosseguir!')
+    } else {
+
+        let n = Number(numero.value)
+        tabuada.innerHTML = ''
         let c = 1
-        tab.innerHTML = ''
-        
-        while (c <= 10){
+
+        while (c <= 10) {
             let item = document.createElement('option')
-            item.text = `${n} x ${c} = ${n*c}`
-            tab.appendChild(item)
-            c ++
+            item.text = `${n} x ${c} = ${n * c}`
+            tabuada.appendChild(item)
+            c++
         }
     }
 }
