@@ -1,34 +1,39 @@
 function contar() {
-    let ini = document.getElementById('txti')
-    let fim = document.getElementById('txtf')
-    let passo = document.getElementById('txtp')
+    let inicio = document.getElementById('inicio')
+    let fim = document.getElementById('fim')
+    let passo = document.getElementById('passo')
     let res = document.getElementById('res')
 
-    if (ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0){
-        res.innerHTML = ('Impossível contar')
-    }else{
-        res.innerHTML = '<br> Contando:<br><br>'
-        let i = Number(ini.value)
+    if (inicio.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
+        res.innerHTML = '<br>Você deve preencher os campos para poder prosseguir!'
+    } else {
+        res.innerHTML = '<br>Contando:<br><br> '
+        let i = Number(inicio.value)
         let f = Number(fim.value)
         let p = Number(passo.value)
-        
 
-
-        if (p <= 0){
-            window.alert('Passo inválido! Considerando PASSO 1')
+        if (p == 0) {
+            window.alert('Valor de PASSO inválido. CONSIDERANDO PASSO 1')
             p = 1
         }
 
-        if (i < f){
-                for (let c = i; c <= f; c += p){
-                    res.innerHTML += `${c} \u{1f449}`
-                }
-        }else{
-            for (let c = i; c >= f; c -= p){
-                res.innerHTML += `${c} \u{1f449}`
+        if (i < f) {
+
+            for (let c = i; c <= f; c += p) {
+                res.innerHTML += ` \u{1f449} ${c} `
             }
+
         }
-        res.innerHTML += `<br> <br> \u{1F3C1} <strong>Fim da contagem</strong>`
-    
+
+        if (i > f) {
+
+            for (let c = i; c >= f; c -= p) {
+                res.innerHTML += ` \u{1f449} ${c} `
+            }
+
+        }
+
+        res.innerHTML += '<br><br>Fim da contagem \u{1F3C1} '
+
     }
 }

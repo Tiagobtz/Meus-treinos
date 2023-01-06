@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+body {
+    background-color: rgb(47, 112, 233);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+div {
+    background-color: white;
+    max-width: 450px;
+    min-width: 300px;
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+input {
+    padding: 5px;
+    border: 0.5px solid black;
+    border-radius: 5px;
+}
+
+#botao {
+    background-color: rgb(13, 87, 13);
+    color: white;
+    display: inline-block;
+    width: 80px;
+}
+
+#botao:hover {
+    background-color: rgb(8, 150, 8);
+    cursor: pointer;
+}
+
+#res {
+    text-align: center;
+    font-size: 24px;
+    color: green;
+}
